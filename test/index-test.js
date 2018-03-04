@@ -22,6 +22,8 @@ describe("addToCart()", function() {
   });
 
   it("turns items into JavaScript objects before adding them to the cart", function() {
+    "use strict";
+
     addToCart("carrots");
 
     let itemConstructor = getCart()[0].constructor;
@@ -30,6 +32,8 @@ describe("addToCart()", function() {
   });
 
   it("properly structures objects in the { itemName: itemPrice } format", function() {
+    "use strict";
+
     addToCart("daikon");
 
     let itemName = Object.keys(getCart()[0])[0];
@@ -40,6 +44,8 @@ describe("addToCart()", function() {
   });
 
   it("sets the price as an integer between 1 and 100", function() {
+    "use strict";
+
     addToCart("eggplant");
 
     let itemPrice = getCart()[0]["eggplant"];
@@ -49,6 +55,8 @@ describe("addToCart()", function() {
   });
 
   it("chooses the price at random", function() {
+    "use strict";
+
     // Note: this test has a 1-in-10,000 chance of a false negative.
     addToCart("figs");
     addToCart("grapes");
@@ -137,6 +145,8 @@ describe("viewCart()", function() {
 
 describe("total()", function() {
   it("adds up the price of all items in the cart", function() {
+    "use strict";
+
     addToCart("sorghum");
     addToCart("tarragon");
 
